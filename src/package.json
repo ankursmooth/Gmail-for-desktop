@@ -1,13 +1,13 @@
 {
   "main": "app.html",
-  "name": "Messenger",
-  "version": "1.4.3",
-  "app-id": "com.aluxian.messengerfordesktop",
+  "name": "UnofficialWhatsApp",
+  "version": "1.1.0",
+  "app-id": "com.aluxian.whatsappfordesktop",
   "chromium-args": "--disable-setuid-sandbox",
   "window": {
     "width": 800,
     "height": 600,
-    "title": "Messenger",
+    "title": "Unofficial WhatsApp",
     "icon": "images/icon.png",
     "toolbar": false,
     "show": false
@@ -22,11 +22,11 @@
     "request": "^2.56.0",
     "semver": "^4.3.5"
   },
-  "manifestUrl": "https://raw.githubusercontent.com/Aluxian/Facebook-Messenger-Desktop/master/src/package.json",
+  "manifestUrl": "https://raw.githubusercontent.com/Aluxian/WhatsApp-Desktop/master/src/package.json",
   "packages": {
-    "osx64": "https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/download/v1.4.3/Messenger.dmg",
-    "win32": "https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/download/v1.4.3/MessengerSetup.exe",
-    "linux32": "https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/download/v1.4.3/Messenger_linux32.deb",
-    "linux64": "https://github.com/Aluxian/Facebook-Messenger-Desktop/releases/download/v1.4.3/Messenger_linux64.deb"
+    "osx64": "https://github.com/Aluxian/WhatsApp-Desktop/releases/download/v1.1.0/UnofficialWhatsApp.dmg",
+    "win32": "https://github.com/Aluxian/WhatsApp-Desktop/releases/download/v1.1.0/UnofficialWhatsAppSetup.exe",
+    "linux32": "https://github.com/Aluxian/WhatsApp-Desktop/releases/download/v1.1.0/UnofficialWhatsApp_linux32.deb",
+    "linux64": "https://github.com/Aluxian/WhatsApp-Desktop/releases/download/v1.1.0/UnofficialWhatsApp_linux64.deb"
   }
 }

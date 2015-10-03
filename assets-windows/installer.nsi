@@ -1,23 +1,23 @@
 !include "MUI2.nsh"
 
-Name "Messenger"
+Name "Unofficial WhatsApp"
 BrandingText "aluxian.com"
 
 # set the icon
 !define MUI_ICON "icon.ico"
 
 # define the resulting installer's name:
-OutFile "..\dist\MessengerSetup.exe"
+OutFile "..\dist\UnofficialWhatsAppSetup.exe"
 
 # set the installation directory
-InstallDir "$PROGRAMFILES\Messenger for Desktop\"
+InstallDir "$PROGRAMFILES\Unofficial WhatsApp for Desktop\"
 
 # app dialogs
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_INSTFILES
 
-!define MUI_FINISHPAGE_RUN_TEXT "Start Messenger"
-!define MUI_FINISHPAGE_RUN $INSTDIR\Messenger.exe
+!define MUI_FINISHPAGE_RUN_TEXT "Start Unofficial WhatsApp"
+!define MUI_FINISHPAGE_RUN "$INSTDIR\UnofficialWhatsApp.exe"
 
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_LANGUAGE "English"
@@ -32,15 +32,15 @@ Section
   SetOutPath $INSTDIR
 
   # specify the files to go in the output path
-  File /r ..\build\Messenger\win32\*
+  File /r ..\build\UnofficialWhatsApp\win32\*
 
   # create the uninstaller
-  WriteUninstaller "$INSTDIR\Uninstall Messenger for Desktop.exe"
+  WriteUninstaller "$INSTDIR\Uninstall Unofficial WhatsApp for Desktop.exe"
 
   # create shortcuts in the start menu and on the desktop
-  CreateShortCut "$SMPROGRAMS\Messenger.lnk" "$INSTDIR\Messenger.exe"
-  CreateShortCut "$SMPROGRAMS\Uninstall Messenger for Desktop.lnk" "$INSTDIR\Uninstall Messenger for Desktop.exe"
-  CreateShortCut "$DESKTOP\Messenger.lnk" "$INSTDIR\Messenger.exe"
+  CreateShortCut "$SMPROGRAMS\Unofficial WhatsApp.lnk" "$INSTDIR\UnofficialWhatsApp.exe"
+  CreateShortCut "$SMPROGRAMS\Uninstall Unofficial WhatsApp for Desktop.lnk" "$INSTDIR\Uninstall Unofficial WhatsApp for Desktop.exe"
+  CreateShortCut "$DESKTOP\Unofficial WhatsApp.lnk" "$INSTDIR\UnofficialWhatsApp.exe"
 
 SectionEnd
 
@@ -51,8 +51,8 @@ Section "Uninstall"
   RMDir /r $INSTDIR
 
   # delete the shortcuts
-  Delete "$SMPROGRAMS\Messenger.lnk"
-  Delete "$SMPROGRAMS\Uninstall Messenger for Desktop.lnk"
-  Delete "$DESKTOP\Messenger.lnk"
+  Delete "$SMPROGRAMS\Unofficial WhatsApp.lnk"
+  Delete "$SMPROGRAMS\Uninstall Unofficial WhatsApp for Desktop.lnk"
+  Delete "$DESKTOP\Unofficial WhatsApp.lnk"
 
 SectionEnd

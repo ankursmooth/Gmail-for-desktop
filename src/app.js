@@ -4,7 +4,6 @@ var win = gui.Window.get();
 var platform = require('./components/platform');
 var updater = require('./components/updater');
 var menus = require('./components/menus');
-var themer = require('./components/themer');
 var settings = require('./components/settings');
 var windowBehaviour = require('./components/window-behaviour');
 var notification = require('./components/notification');
@@ -12,7 +11,7 @@ var dispatcher = require('./components/dispatcher');
 
 // Ensure there's an app shortcut for toast notifications to work on Windows
 if (platform.isWindows) {
-  gui.App.createShortcut(process.env.APPDATA + "\\Microsoft\\Windows\\Start Menu\\Programs\\Messenger.lnk");
+  gui.App.createShortcut(process.env.APPDATA + "\\Microsoft\\Windows\\Start Menu\\Programs\\Unofficial WhatsApp.lnk");
 }
 
 // Add dispatcher events
@@ -52,9 +51,6 @@ windowBehaviour.setNewWinPolicy(win);
 // Inject logic into the app when it's loaded
 var iframe = document.querySelector('iframe');
 iframe.onload = function() {
-  // Load the theming module
-  themer.apply(iframe.contentDocument);
-
   // Inject a callback in the notification API
   notification.inject(iframe.contentWindow, win);
 

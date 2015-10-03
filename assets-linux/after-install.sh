@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Link to the binary
-ln -sf /opt/MessengerForDesktop/Messenger /usr/local/bin/messengerfordesktop
+ln -sf /opt/WhatsAppForDesktop/UnofficialWhatsApp /usr/local/bin/whatsappfordesktop
 
 # Launcher icon
-desktop-file-install /opt/MessengerForDesktop/messengerfordesktop.desktop
+desktop-file-install /opt/WhatsAppForDesktop/whatsappfordesktop.desktop
