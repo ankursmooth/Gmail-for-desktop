@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Gmail-for-desktop by ankursmooth</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Gmail-for-desktop</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/ankursmooth/Gmail-for-desktop" class="btn">View on GitHub</a>
+      <a href="https://github.com/ankursmooth/Gmail-for-desktop/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/ankursmooth/Gmail-for-desktop/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="unofficial-gmail-for-desktop" class="anchor" href="#unofficial-gmail-for-desktop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Unofficial Gmail for Desktop</h1>
+
+<p>-ankur arora</p>
+
+<p>A simple &amp; beautiful desktop client for gmail which runs on OS X, Windows and Linux. Built with <a href="http://nwjs.io/">NW.js</a>. Not affiliated with gmail . This is <strong>NOT</strong> an official product. Read the <a href="https://github.com/ankursmooth/Gmail-for-Desktop/blob/master/DISCLAIMER">DISCLAIMER</a>.</p>
+
+<p>the major work of this project is done by <a href="https://github.com/Aluxian" class="user-mention">@Aluxian</a> </p>
+
+<p>i have modified it to show desktop notifications for gmail</p>
+
+<p>when notification comes, to check that email, click on the gmail icon in notification area</p>
+
+<h2>
+<a id="gmail-features" class="anchor" href="#gmail-features" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>gmail</em> features</h2>
+
+<ul>
+<li>Group chats</li>
+<li>Send photos &amp; videos</li>
+<li>Share locations</li>
+</ul>
+
+<h2>
+<a id="unofficial-gmail-for-desktop-features" class="anchor" href="#unofficial-gmail-for-desktop-features" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Unofficial gmail for Desktop</em> features</h2>
+
+<ul>
+<li>Badge with the number of notifications in the dock/taskbar (OS X and Windows)</li>
+<li>Auto-launch on OS startup (OS X, Windows)</li>
+<li>Native notifications (all platforms)l</li>
+<li>System tray icon (OS X, Windows)</li>
+<li>Open links in browser or new window</li>
+<li>Preferences in the right-click context menu (or menu bar for OS X, tray menu for Windows)</li>
+</ul>
+
+<h2>
+<a id="build" class="anchor" href="#build" aria-hidden="true"><span class="octicon octicon-link"></span></a>Build</h2>
+
+<h3>
+<a id="pre-requisites" class="anchor" href="#pre-requisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Pre-requisites</h3>
+
+<pre><code># install gulp
+npm install -g gulp
+
+# install dependencies
+npm install
+</code></pre>
+
+<ul>
+<li>
+<strong>wine</strong>: If you're on OS X/Linux and want to build for Windows, you need <a href="http://winehq.org/">Wine</a> installed. Wine is required in order
+to set the correct icon for the exe. If you don't have Wine, you can comment out the <code>winIco</code> field in <code>gulpfile</code>.</li>
+<li>
+<strong>makensis</strong>: Required by the <code>pack:win32</code> task in <code>gulpfile</code> to create the Windows installer.</li>
+<li>
+<a href="https://github.com/jordansissel/fpm"><strong>fpm</strong></a>: Required by the <code>pack:linux{32|64}:deb</code> tasks in <code>gulpfile</code> to create the Linux installers.</li>
+</ul>
+
+<p>Quick install on OS X:</p>
+
+<pre><code>brew install wine makensis
+sudo gem install fpm
+</code></pre>
+
+<h3>
+<a id="os-x-pack-the-app-in-a-dmg" class="anchor" href="#os-x-pack-the-app-in-a-dmg" aria-hidden="true"><span class="octicon octicon-link"></span></a>OS X: pack the app in a .dmg</h3>
+
+<pre><code>gulp pack:osx64
+</code></pre>
+
+<h3>
+<a id="windows-create-the-installer" class="anchor" href="#windows-create-the-installer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Windows: create the installer</h3>
+
+<pre><code>gulp pack:win32
+</code></pre>
+
+<h3>
+<a id="linux-3264-bit-pack-the-app-in-a-deb" class="anchor" href="#linux-3264-bit-pack-the-app-in-a-deb" aria-hidden="true"><span class="octicon octicon-link"></span></a>Linux 32/64-bit: pack the app in a .deb</h3>
+
+<pre><code>gulp pack:linux{32|64}:deb
+</code></pre>
+
+<p>The output is in <code>./dist</code>. Take a look at <code>gulpfile.coffee</code> for additional tasks.</p>
+
+<p><strong>TIP</strong>: use the <code>--toolbar</code> parameter to quickly build the app with the toolbar on. E.g. <code>gulp build:win32 --toolbar</code>.</p>
+
+<p><strong>TIP</strong>: use <code>gulp build:win32 --noicon</code> to quickly build the Windows app without the icon.</p>
+
+<p><strong>TIP</strong>: for OS X, use the <code>run:osx64</code> task to build the app and run it immediately.</p>
+
+<h2>
+<a id="note-to-gmail" class="anchor" href="#note-to-gmail" aria-hidden="true"><span class="octicon octicon-link"></span></a>Note to gmail</h2>
+
+<p>This project does not attempt to reverse engineer the gmail API or attempt to reimplement any part of the gmail client. Any communication between the user and gmail servers is handled by gmail Web itself; this is just a native wrapper for gmail Web, more akin to a browser than any gmail software.</p>
+
+<h2>
+<a id="contributions" class="anchor" href="#contributions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Contributions</h2>
+
+<p>Contributions are welcome! For feature requests and bug reports please <a href="https://github.com/ankursmooth/Gmail-for-desktop/issues">submit an issue</a>.
+Also notify <a href="https://github.com/Aluxian" class="user-mention">@Aluxian</a> on github and twitter for more info on source code</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2015 Alexandru Rosianu</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/ankursmooth/Gmail-for-desktop">Gmail-for-desktop</a> is maintained by <a href="https://github.com/ankursmooth">ankursmooth</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
