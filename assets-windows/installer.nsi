@@ -1,23 +1,23 @@
 !include "MUI2.nsh"
 
-Name "Messenger"
-BrandingText "aluxian.com"
+Name "Unofficial Gmail"
+BrandingText "ankursmooth.strikingly.com"
 
 # set the icon
 !define MUI_ICON "icon.ico"
 
 # define the resulting installer's name:
-OutFile "..\dist\MessengerSetup.exe"
+OutFile "..\dist\UnofficialGmailSetup.exe"
 
 # set the installation directory
-InstallDir "$PROGRAMFILES\Messenger for Desktop\"
+InstallDir "$PROGRAMFILES\Unofficial Gmail for Desktop\"
 
 # app dialogs
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_INSTFILES
 
-!define MUI_FINISHPAGE_RUN_TEXT "Start Messenger"
-!define MUI_FINISHPAGE_RUN $INSTDIR\Messenger.exe
+!define MUI_FINISHPAGE_RUN_TEXT "Start Unofficial Gmail"
+!define MUI_FINISHPAGE_RUN "$INSTDIR\UnofficialGmail.exe"
 
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_LANGUAGE "English"
@@ -32,15 +32,15 @@ Section
   SetOutPath $INSTDIR
 
   # specify the files to go in the output path
-  File /r ..\build\Messenger\win32\*
+  File /r ..\build\UnofficialGmail\win32\*
 
   # create the uninstaller
-  WriteUninstaller "$INSTDIR\Uninstall Messenger for Desktop.exe"
+  WriteUninstaller "$INSTDIR\Uninstall Unofficial Gmail for Desktop.exe"
 
   # create shortcuts in the start menu and on the desktop
-  CreateShortCut "$SMPROGRAMS\Messenger.lnk" "$INSTDIR\Messenger.exe"
-  CreateShortCut "$SMPROGRAMS\Uninstall Messenger for Desktop.lnk" "$INSTDIR\Uninstall Messenger for Desktop.exe"
-  CreateShortCut "$DESKTOP\Messenger.lnk" "$INSTDIR\Messenger.exe"
+  CreateShortCut "$SMPROGRAMS\Unofficial Gmail.lnk" "$INSTDIR\UnofficialGmail.exe"
+  CreateShortCut "$SMPROGRAMS\Uninstall Unofficial Gmail for Desktop.lnk" "$INSTDIR\Uninstall Unofficial Gmail for Desktop.exe"
+  CreateShortCut "$DESKTOP\Unofficial Gmail.lnk" "$INSTDIR\UnofficialGmail.exe"
 
 SectionEnd
 
@@ -51,8 +51,8 @@ Section "Uninstall"
   RMDir /r $INSTDIR
 
   # delete the shortcuts
-  Delete "$SMPROGRAMS\Messenger.lnk"
-  Delete "$SMPROGRAMS\Uninstall Messenger for Desktop.lnk"
-  Delete "$DESKTOP\Messenger.lnk"
+  Delete "$SMPROGRAMS\Unofficial Gmail.lnk"
+  Delete "$SMPROGRAMS\Uninstall Unofficial Gmail for Desktop.lnk"
+  Delete "$DESKTOP\Unofficial Gmail.lnk"
 
 SectionEnd

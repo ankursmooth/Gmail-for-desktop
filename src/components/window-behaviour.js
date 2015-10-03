@@ -1,7 +1,6 @@
 var gui = window.require('nw.gui');
 var platform = require('./platform');
 var settings = require('./settings');
-var utils = require('./utils');
 
 module.exports = {
   /**
@@ -48,7 +47,6 @@ module.exports = {
     win.removeAllListeners('new-win-policy');
     win.on('new-win-policy', function(frame, url, policy) {
       if (settings.openLinksInBrowser) {
-        url = utils.skipFacebookRedirect(url);
         gui.Shell.openExternal(url);
         policy.ignore();
       } else {
@@ -101,25 +99,14 @@ module.exports = {
    */
   syncBadgeAndTitle: function(win, parentDoc, childDoc) {
     var notifCountRegex = /\((\d)\)/;
-    var defaultTitle = childDoc.title;
 
     setInterval(function() {
+      // Sync title
       parentDoc.title = childDoc.title;
-      defaultTitle = defaultTitle || childDoc.title;
 
-      var label = '';
-
-      if (childDoc.title != defaultTitle) {
-        var countMatch = notifCountRegex.exec(childDoc.title);
-        label = countMatch && countMatch[1] || '';
-
-        if (!label) {
-          // Probably it says that someone messaged the user
-          // This prevents the badge from blinking at the same time with the title
-          return;
-        }
-      }
-
+      // Find count
+      var countMatch = notifCountRegex.exec(childDoc.title);
+      var label = countMatch && countMatch[1] || '';
       win.setBadgeLabel(label);
 
       // Update the tray icon too

@@ -5,11 +5,9 @@ var gui = window.require('nw.gui');
 var DEFAULT_SETTINGS = {
   launchOnStartup: false,
   checkUpdateOnLaunch: true,
-  openLinksInBrowser: true,
-  autoHideSidebar: false,
+  openLinksInBrowser: false,
   asMenuBarAppOSX: false,
   windowState: {},
-  theme: 'default'
 };
 
 var db = new Store(path.join(gui.App.dataPath, 'preferences.json'));

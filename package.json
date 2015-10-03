@@ -1,9 +1,10 @@
 {
-  "name": "Messenger",
-  "version": "1.4.3",
+  "name": "UnofficialGmail",
+  "version": "1.1.0",
+  "description": "A simple & beautiful desktop client for Gmail. Not an official app.",
   "repository": {
     "type": "git",
-    "url": "git@github.com:Aluxian/Facebook-Messenger-Desktop.git"
+    "url": "git@github.com:ankursmooth/Gmail-for-desktop.git"
   },
   "scripts": {
     "postinstall": "(cd src && npm install)"

@@ -1,4 +1,4 @@
 # Linux related assets
 
 - `after-install` and `after-remove` scripts
-- `messengerfordesktop.desktop` and icons for launchers
+- `gmailfordesktop.desktop` and icons for launchers
