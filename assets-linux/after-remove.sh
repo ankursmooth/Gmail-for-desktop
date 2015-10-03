@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Link to the binary
-rm -f /usr/local/bin/whatsappfordesktop
+rm -f /usr/local/bin/gmailfordesktop
 
 # Launcher files
-rm -f /usr/share/applications/whatsappfordesktop.desktop
+rm -f /usr/share/applications/gmailfordesktop.desktop

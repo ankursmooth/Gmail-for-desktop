@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Unofficial Gmail
+Icon=gmailfordesktop
+Exec=/opt/GmailForDesktop/UnofficialGmail
+Comment=Unofficial Gmail for Desktop
+Categories=Network;Chat;
+Terminal=false
+Name[en_IN]=gmailfordesktop

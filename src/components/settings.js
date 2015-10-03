@@ -5,7 +5,7 @@ var gui = window.require('nw.gui');
 var DEFAULT_SETTINGS = {
   launchOnStartup: false,
   checkUpdateOnLaunch: true,
-  openLinksInBrowser: true,
+  openLinksInBrowser: false,
   asMenuBarAppOSX: false,
   windowState: {},
 };
