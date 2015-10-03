@@ -1,0 +1,71 @@
+1.4.3
+- Don't load the tray icon on Linux (fix)
+
+1.4.2
+- Fixes tray icon always appearing on OSX
+- Enables Chromium plugins (could fix calling crashes)
+
+1.4.1
+- Show the linux tray icon (not tested)
+- Use native clipboard (nwjs)
+- Reload every 10s until online instead of 15s
+- Close the window with the ESC key #46
+- Fixes sidebar transparency bug #115
+- Allows users to remove the update prompt #127
+- Improves the icon_tray_alert image for Windows
+
+1.4.0
+- Background loading gif
+- Fixes dialog crashes (e.g. when checking for update)
+- Fixes (*might* stop the badge from blinking)
+- Fixes multiple tray icons
+- Fixes sidebar not being themed (mosaic theme)
+- Keep window state on reload
+- Makes linux icon themeable
+
+1.3.3
+- Fixes Windows notifications not showing up the app window on click
+- Removes loading indicator (it caused high cpu usage and wasn't really necessary)
+
+1.3.2
+- Brings task bar icon back
+- Run as menu bar app not enabled by default on OS X
+
+1.3.1
+- Run as menu bar app on OSX
+- Links don't open through facebook.com or messenger.com anymore
+- Preserve window state on quit
+- Inject js each time the iframe reloads
+
+1.3.0
+- fixes badge with the number of notifications not appearing anymore
+- Auto-launch on OS startup (OS X, Windows)
+- fixes Native notifications (all platforms)
+- 3 themes: Default, Dark and Mosaic
+- Auto-hide the left sidebar
+- Open links in browser or new window
+- Preferences in the right-click context menu (or menu bar for OS X, tray menu for Windows)
+
+1.2.4
+- fixed deb packages, removed rpm ones
+
+1.2.3
+- deb and rpm packages for linux
+
+1.2.2
+- Patch release; removes dev toolbar I forgot to disable
+
+1.2.1
+- Adds tray icon for Windows
+- Adds installer for linux
+
+1.2.0
+- Links open in the browser
+- OS X: keep the app open when closing the window
+- The app checks for update when launched
+
+1.1.0
+- Badge with the number of unread notifications in the dock/taskbar (OSX/Win)
+
+1.0.0
+- First release
